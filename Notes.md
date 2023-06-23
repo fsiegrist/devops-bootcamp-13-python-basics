@@ -95,8 +95,6 @@ def days_to_units(number_of_days, unit_name, number_of_units_per_day):
 # calling a function
 seconds_in_20_days = days_to_units(20, "seconds", 24 * 60 * 60)
 print(days_to_units(35, "minutes", 24 * 60))
-
-[Built-In Functions](https://docs.python.org/3.11/library/functions.html)
 ```
 
 ### 8 - Accepting User Input
@@ -226,6 +224,8 @@ Examples:
 - int("10")
 - "1 2 3".split()
 - [1, 3, 7].count()
+
+[Built-In Functions](https://docs.python.org/3.11/library/functions.html)
 
 ### 16 - Dictionary Data Type 
 ```python
