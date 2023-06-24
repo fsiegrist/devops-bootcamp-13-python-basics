@@ -1,8 +1,5 @@
 from datetime import datetime
 
-goal = ''
-deadline = None
-
 while True:
     user_input = input("Enter your goal with a deadline (DD.MM.YYYY) separated by a colon:\n")
     input_list = user_input.split(":")
