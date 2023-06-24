@@ -1,22 +1,3 @@
-## Demo Project - Write Countdown Application
-
-### Topics of the Demo Project
-Write a countdown application
-
-### Technologies Used
-- Python
-- PyCharm
-- Git
-
-### Project Description
-Write an application that accepts a user input of a goal and a deadline (date). Print the remaining time until that deadline.
-
-
-#### Solution
-Let's create a file called `time-till-deadline.py` for our program.
-
-_time-till-deadline.py_
-```python
 from datetime import datetime
 
 goal = ''
@@ -52,4 +33,3 @@ time_till_deadline = deadline_date - today_date
 days_till_deadline = int(time_till_deadline.total_seconds() / 3600 / 24)
 hours_till_deadline = int(time_till_deadline.total_seconds() / 3600)
 print(f"The time remaining to reach your goal '{goal}' is {days_till_deadline} days or {hours_till_deadline} hours.")
-```

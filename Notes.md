@@ -306,3 +306,15 @@ But there are many more available, which are NOT part of the Python installation
 </details>
 
 *****
+
+<details>
+<summary>Video: 18 - Project: Countdown App</summary>
+<br />
+
+We write a program that allows the user to enter a date (the deadline) and then prints how much time is left from now until this deadline is reached.
+
+See [demo project #1](./demo-projects/1-countdown-application/)
+
+</details>
+
+*****
