@@ -1,5 +1,5 @@
 import openpyxl
-from openpyxl.styles import Font, Color, PatternFill
+from openpyxl.styles import Font, PatternFill
 from copy import copy
 
 inv_file = openpyxl.load_workbook("inventory.xlsx")
@@ -41,8 +41,8 @@ for product_row in range(2, product_list.max_row + 1):   # range(75) creates a l
 # set the title of the new column
 total_inv_price_title = product_list.cell(1, 5)
 total_inv_price_title.value = 'Total Price'
-total_inv_price_title.fill = copy(product_list.cell(1, 4).fill)
 total_inv_price_title.font = copy(product_list.cell(1, 4).font)
+total_inv_price_title.fill = copy(product_list.cell(1, 4).fill)
 
 print(products_per_supplier)
 print(total_value_per_supplier)
