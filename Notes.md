@@ -318,3 +318,33 @@ See [demo project #1](./demo-projects/1-countdown-application/)
 </details>
 
 *****
+
+<details>
+<summary>Video: 19 - Packages, PyPI and pip</summary>
+<br />
+
+Any Python file is a module. A package is a collection of modules containing an `__init__.py` file. [PyPI](https://pypi.org/) (Python Package Index) is the official package repository, where you can find hundreds of third party Python packages. Everybody can publish their packages to this repository.
+
+To install packages we can use the Python Package Manager `pip3` which got installed together with `python3`.
+
+For example to install/uninstall Django (a web application framework), we can execute
+```sh
+pip3 install Django
+pip3 uninstall Django
+```
+
+</details>
+
+*****
+
+<details>
+<summary>Video: 20 - Project: Automation with Python (Spreadsheet)</summary>
+<br />
+
+Write an application that reads a spreadsheet file and processes and manipulates the spreadsheet.
+
+See [demo project #2](./demo-projects/2-automation-with-python/)
+
+</details>
+
+*****

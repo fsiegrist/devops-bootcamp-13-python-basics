@@ -1,50 +1,3 @@
-## Demo Project - Automation with Python
-
-### Topics of the Demo Project
-Automation with Python
-
-### Technologies Used
-- Python
-- PyCharm
-- Git
-
-### Project Description
-Write an application that reads the spreadsheet file `inventory.xlsx` and processes and manipulates the spreadsheet.
-
-The spreadsheet contains four columns:
-- Product No
-- Inventory
-- Price
-- Supplier
-
-There are three different suppliers: AAA Company, BBB Company and CCC Company.
-
-The program should
-- list each company with respective product count
-- list each company with respective total inventory value
-- list products with inventory less than 10
-- calculate and write the inventory value for each product into spreadsheet and save it to a new file
-
-
-#### Solution
-First we have to install a package, which provides support for working with spreadsheets. The built-in `io` module is for working with files in general, but not specifically for spreadsheets.
-
-The package we are looking for is called [openpyxl](https://pypi.org/project/openpyxl/). We install it executing
-```sh
-pip3 install openpyxl
-# Collecting openpyxl
-#   Downloading openpyxl-3.1.2-py2.py3-none-any.whl (249 kB)
-#      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 250.0/250.0 kB 2.9 MB/s eta 0:00:00
-# Collecting et-xmlfile (from openpyxl)
-#   Downloading et_xmlfile-1.1.0-py3-none-any.whl (4.7 kB)
-# Installing collected packages: et-xmlfile, openpyxl
-# Successfully installed et-xmlfile-1.1.0 openpyxl-3.1.2
-```
-
-Now we can implement or Python program. We create a file called `main.py` with the following content:
-
-_main.py_
-```python
 import openpyxl
 from openpyxl.styles import Font, Color, PatternFill
 from copy import copy
@@ -96,4 +49,3 @@ print(total_value_per_supplier)
 print(products_under_10_inv)
 
 inv_file.save("inventory_with_total_value.xlsx")
-```
