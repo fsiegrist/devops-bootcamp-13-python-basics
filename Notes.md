@@ -394,6 +394,8 @@ user_one.get_user_info()
 user_two = User("henry.fonda@company.com", "Henry Fonda", "secret", "Actor")
 ```
 
+[Official Style Guides for Python](https://www.python.org/dev/peps/pep-0008/)
+
 </details>
 
 *****
