@@ -348,3 +348,64 @@ See [demo project #2](./demo-projects/2-automation-with-python/)
 </details>
 
 *****
+
+<details>
+<summary>Video: 21 - OOP: Classes and Objects</summary>
+<br />
+
+Python is a object oriented programming language. Almost everything in Python is an object, with its properties (or also called attributes) and methods (functions that belong to the object).
+
+A class is a blueprint for a specific type of similar objects, for example users. And objects are unique instances of their class.
+
+### Class Example
+
+_user.py_
+```python
+class User:
+
+    # constructor
+    def __init___(self, email, name, password, current_job_title):
+        self.email = email
+        self.name = name
+        self. password = password
+        self.current_job_title = current_job_title
+
+    def change_password(self, new_password):
+        self.password = new_password
+
+    def change_job_title(self, new_job_title):
+        self.current_job_title = new_job_title
+    
+    def get_user_info(self):
+        print(f"User {self.name} currently works as a {self.current_job_title} and you can contact them at {self.email}.")
+```
+
+To create an instance of a class, we call a function named like the class an taking the parameters of the `__init__` function (without `self`).
+
+_main.py_
+```python
+from user import User
+
+user_one = User("john.dunbar@company.com", "John Dunbar", "two_socks", "DevOps Engineer")
+user_one.get_user_info()
+user_one.change_job_title("DevOps trainer")
+user_one.get_user_info()
+
+user_two = User("henry.fonda@company.com", "Henry Fonda", "secret", "Actor")
+```
+
+</details>
+
+*****
+
+<details>
+<summary>Video: 22 - Project: API Request to GitLab</summary>
+<br />
+
+Write an application that talks to an API of an external application (GitLab) and lists all the public GitLab repositories for a specified user.
+
+See [demo project #3](./demo-projects/3-gitlab-api-request/)
+
+</details>
+
+*****
