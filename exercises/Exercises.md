@@ -16,7 +16,7 @@ my_list = [1, 2, 2, 4, 4, 5, 6, 8, 10, 13, 22, 35, 52, 83]
 2. Task: Instead of printing the elements one by one, make a new list that has all the elements higher than or equal 10 from this list in it and print out this new list.
 3. Task: Ask the user for a number as input and print a list that contains only those elements from my_list that are higher than the number given by the user.
 
-**Solution:**\
+**Solution:**
 
 1. Task
 ```python
@@ -81,7 +81,7 @@ Write a Python Script that:
 5. Task: Sums up all the values in the new dictionary and print it out
 6. Task: Prints the max and minimum values of the dictionary
 
-**Solution:**\
+**Solution:**
 
 1. Task
 ```python
@@ -174,7 +174,7 @@ Write a Python Program that:
 1. Task: Prints out - the name, job and city of each employee using a loop. The program must work for any number of employees in the list, not just 2.
 2. Task: Prints the country of the second employee in the list by accessing it directly without the loop.
 
-**Solution:**\
+**Solution:**
 
 1. Task
 ```python
@@ -205,7 +205,7 @@ print(f"2nd employee's country: {employees[1].get('address').get('country')}")
 - Write a function that prints the even numbers from a provided list.
 - For cleaner code, declare these functions in its own helper Module and use them in the main.py file
 
-**Solution:**\
+**Solution:**
 
 </details>
 
@@ -226,7 +226,7 @@ Write a simple calculator program that:
 
 Concepts covered: working with different data types, conditionals, type conversion, user input, user input validation
 
-**Solution:**\
+**Solution:**
 
 </details>
 
@@ -249,7 +249,7 @@ Hint: Use the built-in random module to generate random numbers https://docs.pyt
 
 Concepts covered: Built-In Module, User Input, Comparison Operator, While loop
 
-**Solution:**\
+**Solution:**
 
 </details>
 
@@ -314,7 +314,7 @@ As both students and professors have a first name, last name and age, you think 
 - So you don't need these properties and method in the other two classes. You can easily inherit these.
 - Change Student and Professor classes to inherit "first_name", "last_name", "age" properties and "print_name" method from the Person class
 
-**Solution:**\
+**Solution:**
 
 </details>
 
@@ -331,7 +331,7 @@ Write a program that:
 - and calculates how many days, hours and minutes are remaining till the birthday
 - prints out the result as a message to the user
 
-**Solution:**\
+**Solution:**
 
 </details>
 
@@ -347,7 +347,7 @@ Write a program that:
 - reads the provided spreadsheet file "employees.xlsx" (see Download section at the bottom) with the following information/columns: "name", "years of experience", "job title", "date of birth"
 - creates a new spreadsheet file "employees_sorted.xlsx" with following info/columns: "name", "years of experience", where the years of experience is sorted in descending order: so the employee name with the most experience in years is on top.
 
-**Solution:**\
+**Solution:**
 
 </details>
 
@@ -364,7 +364,7 @@ Write a program that:
 - gets all the public repositories for a specific GitHub user
 - prints the name & URL of every project
 
-**Solution:**\
+**Solution:**
 
 </details>
 
