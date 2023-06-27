@@ -12,11 +12,37 @@ Using the following list:
 ```python
 my_list = [1, 2, 2, 4, 4, 5, 6, 8, 10, 13, 22, 35, 52, 83]
 ```
-- Write a program that prints out all the elements of the list that are higher than or equal 10.
-- Instead of printing the elements one by one, make a new list that has all the elements higher than or equal 10 from this list in it and print out this new list.
-- Ask the user for a number as input and print a list that contains only those elements from my_list that are higher than the number given by the user.
+1. Task: Write a program that prints out all the elements of the list that are higher than or equal 10.
+2. Task: Instead of printing the elements one by one, make a new list that has all the elements higher than or equal 10 from this list in it and print out this new list.
+3. Task: Ask the user for a number as input and print a list that contains only those elements from my_list that are higher than the number given by the user.
 
 **Solution:**\
+
+1. Task
+```python
+for number in my_list:
+    if number >= 10:
+        print(number)
+```
+
+2. Task
+```python
+new_list = []
+for number in my_list:
+    if number >= 10:
+        new_list.append(number)
+print(new_list)
+```
+
+3. Task
+```python
+threshold = input("Enter a number: ")
+new_list = []
+for number in my_list:
+    if number > int(threshold):
+        new_list.append(number)
+print(new_list)
+```
 
 </details>
 
@@ -39,9 +65,9 @@ employee = {
 ```
 
 Write a Python Script that:
-- Updates the job to Software Engineer
-- Removes the age key from the dictionary
-- Loops through the dictionary and prints the key:value pairs one by one
+1. Task: Updates the job to Software Engineer
+2. Task: Removes the age key from the dictionary
+3. Task: Loops through the dictionary and prints the key:value pairs one by one
 
 
 Using the following 2 dictionaries:
@@ -51,11 +77,64 @@ dict_two = {'x': 300, 'y': 200}
 ```
 
 Write a Python Script that:
-- Merges these two Python dictionaries into 1 new dictionary.
-- Sums up all the values in the new dictionary and print it out
-- Prints the max and minimum values of the dictionary
+4. Task: Merges these two Python dictionaries into 1 new dictionary
+5. Task: Sums up all the values in the new dictionary and print it out
+6. Task: Prints the max and minimum values of the dictionary
 
 **Solution:**\
+
+1. Task
+```python
+employee['job'] = 'Software Engineer'
+```
+
+2. Task
+```python
+employee.pop('age')
+```
+
+3. Task
+```python
+for key, value in employee.items():
+    print(f"{key}:{value}")
+```
+
+4. Task
+```python
+dict_merged = dict_one.copy()
+dict_merged.update(dict_two)
+```
+
+5. Task
+```python
+sum = 0
+for value in dict_merged.values():
+    sum = sum + value
+print(f"Sum of values = {sum}")
+```
+
+6. Task
+```python
+min = None
+max = None
+for value in dict_merged.values():
+    if min == None:
+        min = value
+    elif value < min:
+        min = value
+    if max == None:
+        max = value
+    elif value > max:
+        max = value
+print(f"min = {min}, max = {max}")
+
+# or
+all_values = []
+for value in dict_merged.values():
+    all_values.append(value)
+all_values.sort()
+print(f"min = {all_values[0]}, max = {all_values[-1]}")
+```
 
 </details>
 
@@ -92,10 +171,24 @@ employees = [{
 ```
 
 Write a Python Program that:
-- Prints out - the name, job and city of each employee using a loop. The program must work for any number of employees in the list, not just 2.
-- Prints the country of the second employee in the list by accessing it directly without the loop.
+1. Task: Prints out - the name, job and city of each employee using a loop. The program must work for any number of employees in the list, not just 2.
+2. Task: Prints the country of the second employee in the list by accessing it directly without the loop.
 
 **Solution:**\
+
+1. Task
+```python
+for employee in employees:
+    print(f"Name: {employee.get('name')}")
+    print(f"Job:  {employee.get('job')}")
+    print(f"City: {employee.get('address').get('city')}")
+    print("--------")
+```
+
+2. Task
+```python
+print(f"2nd employee's country: {employees[1].get('address').get('country')}")
+```
 
 </details>
 
