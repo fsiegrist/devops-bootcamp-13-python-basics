@@ -203,7 +203,7 @@ print(f"2nd employee's country: {employees[1].get('address').get('country')}")
 1. Task: Write a function that accepts a list of dictionaries with employee age (see example list from the Exercise 3) and prints out the name and age of the youngest employee.
 2. Task: Write a function that accepts a string and calculates the number of upper case letters and lower case letters.
 3. Task: Write a function that prints the even numbers from a provided list.
-4. Task: For cleaner code, declare these functions in its own helper Module and use them in the main.py file
+4. Task: For cleaner code, declare these functions in its own helper module and use them in the main.py file
 
 **Solution:**
 
@@ -239,7 +239,7 @@ def print_even(numbers):
             print(number)
 ```
 
-4. Task
+4. Task\
 Move all the above functions into a file called `ex4_helper.py` and create a file called `ex4_main.py` with the following content:
 
 ```python
