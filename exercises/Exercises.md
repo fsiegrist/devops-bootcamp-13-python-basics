@@ -239,7 +239,8 @@ def print_even(numbers):
             print(number)
 ```
 
-4. Task\
+4. Task
+
 Move all the above functions into a file called `ex4_helper.py` and create a file called `ex4_main.py` with the following content:
 
 ```python
