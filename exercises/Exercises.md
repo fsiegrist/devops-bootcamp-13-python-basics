@@ -200,12 +200,99 @@ print(f"2nd employee's country: {employees[1].get('address').get('country')}")
 
 **Tasks:**
 
-- Write a function that accepts a list of dictionaries with employee age (see example list from the Exercise 3) and prints out the name and age of the youngest employee.
-- Write a function that accepts a string and calculates the number of upper case letters and lower case letters.
-- Write a function that prints the even numbers from a provided list.
-- For cleaner code, declare these functions in its own helper Module and use them in the main.py file
+1. Task: Write a function that accepts a list of dictionaries with employee age (see example list from the Exercise 3) and prints out the name and age of the youngest employee.
+2. Task: Write a function that accepts a string and calculates the number of upper case letters and lower case letters.
+3. Task: Write a function that prints the even numbers from a provided list.
+4. Task: For cleaner code, declare these functions in its own helper Module and use them in the main.py file
 
 **Solution:**
+
+1. Task
+```python
+def print_youngest(employees):
+    youngest = employees[0]
+    for employee in employees:
+        if int(employee.get('age')) < int(youngest.get('age')):
+            youngest = employee
+    print(f"{youngest.get('name')} ({youngest.get('age')})")
+```
+
+2. Task
+```python
+def count_upper_lower_case_characters(text):
+    upper = 0
+    lower = 0
+    for character in list(text):
+        if character.isupper():
+            upper += 1
+        elif character.islower():
+            lower += 1
+    print(f"number of uppercase characters: {upper}")
+    print(f"number of lowercase characters: {lower}")
+```
+
+3. Task
+```python
+def print_even(numbers):
+    for number in numbers:
+        if number % 2 == 0:
+            print(number)
+```
+
+4. Task
+Move all the above functions into a file called `ex4_helper.py` and create a file called `ex4_main.py` with the following content:
+
+```python
+from ex4_helper import *
+
+# test print_youngest():
+employees = [{
+  "name": "Tina",
+  "age": 30,
+  "birthday": "1990-03-10",
+  "job": "DevOps Engineer",
+  "address": {
+    "city": "New York",
+    "country": "USA"
+  }
+},
+{
+  "name": "Tom",
+  "age": 15,
+  "birthday": "2005-04-06",
+  "job": "Student",
+  "address": {
+    "city": "Zurich",
+    "country": "Switzerland"
+  }
+},
+{
+  "name": "Tim",
+  "age": 35,
+  "birthday": "1985-02-21",
+  "job": "Developer",
+  "address": {
+    "city": "Sydney",
+    "country": "Australia"
+  }
+}]
+
+print_youngest(employees) # should print "Tom (15)"
+
+
+# test count_upper_lower_case_characters():
+text = "The quick brown fox called Ferox jumps over the lazy dog's back 123 times."
+count_upper_lower_case_characters(text) # should count 2 uppercase and 54 lowercase characters
+
+# test print_even():
+numbers = [0,1,2,3,4,5,6,7,8,9,10]
+print_even(numbers) # should print 0, 2, 4, 6, 8, 10
+```
+
+Run the ex4_main.py file to test then functions:
+```sh
+python3 ex4_main.py
+```
 
 </details>
 
