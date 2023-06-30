@@ -403,6 +403,29 @@ Concepts covered: Built-In Module, User Input, Comparison Operator, While loop
 
 **Solution:**
 
+```python
+from random import randint
+
+secret_number = randint(1, 9)
+guess = input("Guess a number greater of equal to 1 and lower or equal to 9: ")
+count = 1
+found = False
+while not found:
+    if not guess.isnumeric():
+        guess = input("The value you entered is not a number. Try again: ")
+    else:
+        guess_n = int(guess)
+        if guess_n == secret_number:
+            print(f"You won in {count} attempts!")
+            found = True
+        elif guess_n < secret_number:
+            guess = input("Your number is to low. Try again: ")
+            count += 1
+        else:
+            guess = input("Your number is to high. Try again: ")
+            count += 1
+```
+
 </details>
 
 ******
@@ -467,6 +490,121 @@ As both students and professors have a first name, last name and age, you think 
 - Change Student and Professor classes to inherit "first_name", "last_name", "age" properties and "print_name" method from the Person class
 
 **Solution:**
+
+Write the following four classes:
+
+_ex7\_person.py_
+```python
+class Person:
+
+    def __init__(self, first_name, last_name, age):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+
+    def print_name(self):
+        print(f"{self.first_name} {self.last_name}")
+```
+
+_ex7\_professor.py_
+```python
+from ex7_person import Person
+
+class Professor(Person):
+
+    def __init__(self, first_name, last_name, age, subjects=[]):
+        super().__init__(first_name, last_name, age)
+        self.subjects = subjects
+    
+    def list_subjects(self):
+        for subject in self.subjects:
+            print(f" - {subject}")
+    
+    def add_subject(self, subject):
+        self.subjects.append(subject)
+    
+    def remove_subject(self, subject):
+        self.subjects.remove(subject)
+```
+
+_ex7\_student.py_
+```python
+from ex7_person import Person
+
+class Student(Person):
+
+    def __init__(self, first_name, last_name, age, lectures=[]):
+        super().__init__(first_name, last_name, age)
+        self.lectures = lectures
+    
+    def list_lectures(self):
+        for lecture in self.lectures:
+            print(f" - {lecture.name}")
+    
+    def add_lecture(self, lecture):
+        self.lectures.append(lecture)
+    
+    def remove_lecture(self, name_of_lecture_to_remove):
+        lecture_to_be_removed = None
+        for lecture in self.lectures:
+            if lecture.name == name_of_lecture_to_remove:
+                lecture_to_be_removed = lecture
+                break
+        if lecture_to_be_removed != None:
+            self.lectures.remove(lecture_to_be_removed)
+```
+
+_ex7\_lecture.py_
+```python
+class Lecture:
+
+    def __init__(self, name, max_students, duration, professors=[]):
+        self.name = name
+        self.max_students = max_students
+        self.duration = duration
+        self.professors = professors
+    
+    def print_info(self):
+        print(f"{self.name} ({self.duration} minutes)")
+    
+    def add_professor(self, professor):
+        self.professors.append(professor)
+```
+
+To test the functionality of the classes, write a main script with the following content:
+
+_ex7\_main.py_
+```python
+from ex7_student import Student
+from ex7_professor import Professor
+from ex7_lecture import Lecture
+
+# Professor
+professor = Professor("Linda", "Gray", 42, ['Linux', 'Databases'])
+professor.print_name()
+professor.add_subject('Programming')
+professor.remove_subject('Linux')
+professor.list_subjects()
+
+# Lecture
+linux_lecture = Lecture("Basic Linux Commands", 25, 45)
+linux_lecture.print_info()
+
+python_lecture = Lecture("Programming with Python", 12, 60)
+python_lecture.add_professor(professor)
+
+database_lecture = Lecture("MySQL Database Administration", 15, 90)
+database_lecture.add_professor(professor)
+
+kubernetes_lecture = Lecture("Kubernetes for Beginners", 10, 60)
+
+# Student
+student = Student("Peter", "Smith", 24, [linux_lecture, python_lecture, database_lecture])
+student.print_name()
+student.add_lecture(kubernetes_lecture)
+student.remove_lecture("MySQL Database Administration")
+student.list_lectures()
+```
 
 </details>
 
